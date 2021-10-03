@@ -5,7 +5,7 @@ import Confirm from './Confirm';
 import Success from './Success';
 
 export default function App() {
-  const [FormData, setFormData] = useState({ fnm, lnm });
+  
 
   return (
     <>

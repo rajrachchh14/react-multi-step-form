@@ -1,7 +1,10 @@
 // step 2
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function DetailForm() {
+  const [Twitter, setTwitter] = useState('');
+  const [Facebook, setFacebook] = useState('');
+  const [Instagram, setInstagram] = useState('');
   return (
     <>
       <div className="container ">
@@ -11,9 +14,27 @@ export default function DetailForm() {
               <fieldset>
                 <h2 className="fs-title">More Detail</h2>
                 <h3 className="fs-subtitle">Step - 2</h3>
-                <input type="text" name="twitter" placeholder="Twitter" />
-                <input type="text" name="facebook" placeholder="Facebook" />
-                <input type="text" name="gplus" placeholder="Google Plus" />
+                <input
+                  type="text"
+                  value={Twitter}
+                  onChange={(e) => setTwitter(e.target.value)}
+                  name="Twitter"
+                  placeholder="Twitter"
+                />
+                <input
+                  type="text"
+                  value={Facebook}
+                  onChange={(e) => setFacebook(e.target.value)}
+                  name="Instagram"
+                  placeholder="Instagram"
+                />
+                <input
+                  type="text"
+                  value={Instagram}
+                  onChange={(e) => setInstagram(e.target.value)}
+                  name="Instagram"
+                  placeholder="Instagram"
+                />
                 <input
                   type="button"
                   name="previous"
