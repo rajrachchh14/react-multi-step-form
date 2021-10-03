@@ -59,7 +59,13 @@ export default function App() {
               />
             );
           case 3:
-            return <Confirm nextHook={nextStep} prevHook={pervStep} />;
+            return (
+              <Confirm
+                nextHook={nextStep}
+                prevHook={pervStep}
+                Value={{ FormData }}
+              />
+            );
           case 4:
             return <Success />;
 

@@ -1,7 +1,8 @@
 // Step 3
 import React from 'react';
 
-export default function Confirm({ nextHook, prevHook }) {
+export default function Confirm({ nextHook, prevHook, Value }) {
+  const { Fnm, Lnm, Email, Twitter, Facebook, Instagram } = Value.FormData;
   const next = () => {
     nextHook();
   };
@@ -20,19 +21,23 @@ export default function Confirm({ nextHook, prevHook }) {
                 <h3 className="fs-subtitle">Step - 3</h3>
                 <ul className="list-group text-start">
                   <li className="list-group-item list-group-item-secondary">
-                    An item
+                    First Name : {Fnm}
                   </li>
                   <li className="list-group-item list-group-item-secondary">
-                    A second item
+                    Last Name : {Lnm}
+                  </li>
+
+                  <li className="list-group-item list-group-item-secondary">
+                    Email : {Email}
                   </li>
                   <li className="list-group-item list-group-item-secondary">
-                    A third item
+                    Twitter : {Twitter}
                   </li>
                   <li className="list-group-item list-group-item-secondary">
-                    A fourth item
+                    Facebook : {Facebook}
                   </li>
                   <li className="list-group-item list-group-item-secondary">
-                    And a fifth one
+                    Instagram : {Instagram}
                   </li>
                 </ul>
                 <button
