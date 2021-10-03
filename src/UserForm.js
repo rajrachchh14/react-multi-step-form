@@ -14,7 +14,7 @@ export default function App() {
                 <h3 className="fs-subtitle">........</h3>
                 <input type="text" name="fname" placeholder="First Name" />
                 <input type="text" name="lname" placeholder="Last Name" />
-                <input type="text" name="phone" placeholder="Phone" />
+                <input type="text" name="email" placeholder="Email Address" />
                 <input
                   type="button"
                   name="next"

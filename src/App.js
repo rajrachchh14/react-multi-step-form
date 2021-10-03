@@ -7,6 +7,7 @@ import Success from './Success';
 export default function App() {
   return (
     <>
+      <h1 className="text-center">Multi Step Form</h1>
       <UserForm />
     </>
   );
