@@ -1,8 +1,7 @@
 // step 1
 import React, { useState } from 'react';
 
-export default function App({ nextHook }) {
-  const [Fnm, setFnm] = useState('');
+export default function App({ nextHook, Input, Value }) {
   const [Lnm, setLnm] = useState('');
   const [Email, setEmail] = useState('');
 
@@ -22,8 +21,10 @@ export default function App({ nextHook }) {
                 <h3 className="fs-subtitle">Step - 1</h3>
                 <input
                   type="text"
-                  onChange={(e) => setFnm(e.target.value)}
-                  value={Fnm}
+                  // onChange={(e) => setFnm(e.target.value)}
+                  // value={Fnm}
+                  onChange={Input}
+                  value={Value}
                   name="fname"
                   placeholder="First Name"
                 />

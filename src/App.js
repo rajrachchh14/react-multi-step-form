@@ -7,15 +7,24 @@ import Success from './Success';
 export default function App() {
   // Default Step  1
   const [step, setStep] = useState(1);
+  // User Datas
+  const [Fnm, setFnm] = useState('');
 
   // Next Logic
-  const nextStep = () => {
+  const nextStep = (e) => {
     setStep(step + 1);
+
+    // if step 3 whole data submit and Alert
   };
 
   // Previous Logic
   const pervStep = () => {
     setStep(step - 1);
+  };
+
+  const ChangeEvent = (e) => {
+    setFnm(e.target.value);
+    console.log('j');
   };
 
   return (
@@ -25,7 +34,9 @@ export default function App() {
       {(() => {
         switch (step) {
           case 1:
-            return <UserForm nextHook={nextStep} />;
+            return (
+              <UserForm nextHook={nextStep} Input={ChangeEvent} Value={Fnm} />
+            );
           case 2:
             return <DetailForm nextHook={nextStep} prevHook={pervStep} />;
           case 3:
