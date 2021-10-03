@@ -10,7 +10,8 @@ export default function App() {
       <div className="container ">
         <div className="row d-flex justify-content-center">
           <div className="col-lg-6 ">
-            <form id="msform">
+            {/* {form tag} */}
+            <div id="msform">
               <fieldset>
                 <h2 className="fs-title">Personal Details</h2>
                 <h3 className="fs-subtitle">Step - 1</h3>
@@ -42,7 +43,7 @@ export default function App() {
                   value="Next"
                 />
               </fieldset>
-            </form>
+            </div>
           </div>
         </div>
       </div>
