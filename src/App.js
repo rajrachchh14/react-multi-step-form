@@ -9,6 +9,7 @@ export default function App() {
     <>
       <h1 className="text-center">Multi Step Form</h1>
       <UserForm />
+      <DetailForm />
     </>
   );
 }
