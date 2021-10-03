@@ -1,5 +1,4 @@
 // step 1
-
 import React from 'react';
 
 export default function App() {
