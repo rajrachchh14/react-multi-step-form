@@ -1,7 +1,14 @@
 // Step 3
 import React from 'react';
 
-export default function Confirm() {
+export default function Confirm({ nextHook, prevHook }) {
+  const next = () => {
+    nextHook();
+  };
+
+  const prev = () => {
+    prevHook();
+  };
   return (
     <>
       <div className="container">
@@ -28,18 +35,23 @@ export default function Confirm() {
                     And a fifth one
                   </li>
                 </ul>
-                <input
+                <button
                   type="button"
                   name="previous"
                   className="previous action-button-previous"
-                  value="Previous"
-                />
-                <input
+                  onClick={prev}
+                >
+                  Previous
+                </button>
+
+                <button
                   type="button"
                   name="next"
                   className="next action-button"
-                  value="Next"
-                />
+                  onClick={next}
+                >
+                  Next
+                </button>
               </fieldset>
             </form>
           </div>

@@ -1,16 +1,23 @@
 // step 2
 import React, { useState } from 'react';
 
-export default function DetailForm() {
+export default function DetailForm({ nextHook, prevHook }) {
   const [Twitter, setTwitter] = useState('');
   const [Facebook, setFacebook] = useState('');
   const [Instagram, setInstagram] = useState('');
+  const next = () => {
+    nextHook();
+  };
+  const prev = () => {
+    prevHook();
+  };
+
   return (
     <>
       <div className="container ">
         <div className="row d-flex justify-content-center">
           <div className="col-lg-6 ">
-            <form id="msform">
+            <div id="msform">
               <fieldset>
                 <h2 className="fs-title">More Detail</h2>
                 <h3 className="fs-subtitle">Step - 2</h3>
@@ -35,20 +42,24 @@ export default function DetailForm() {
                   name="Instagram"
                   placeholder="Instagram"
                 />
-                <input
+                <button
                   type="button"
                   name="previous"
                   className="previous action-button-previous"
-                  value="Previous"
-                />
-                <input
+                  onClick={prev}
+                >
+                  Previous
+                </button>
+                <button
                   type="button"
                   name="next"
                   className="next action-button"
-                  value="Next"
-                />
+                  onClick={next}
+                >
+                  Next
+                </button>
               </fieldset>
-            </form>
+            </div>
           </div>
         </div>
       </div>

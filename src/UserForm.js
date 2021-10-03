@@ -1,10 +1,15 @@
 // step 1
 import React, { useState } from 'react';
 
-export default function App() {
+export default function App({ nextHook }) {
   const [Fnm, setFnm] = useState('');
   const [Lnm, setLnm] = useState('');
   const [Email, setEmail] = useState('');
+
+  const next = () => {
+    nextHook();
+  };
+
   return (
     <>
       <div className="container ">
@@ -36,12 +41,14 @@ export default function App() {
                   name="email"
                   placeholder="Email Address"
                 />
-                <input
+                <button
                   type="button"
                   name="next"
                   className="next action-button"
-                  value="Next"
-                />
+                  onClick={next}
+                >
+                  Next
+                </button>
               </fieldset>
             </div>
           </div>
