@@ -32,12 +32,25 @@ export default function App() {
     console.log('j');
 
     // setFormData({ Fnm: e.target.value });
+    //  setFormData({ [InputEvent]: e.target.value });
   };
 */
 
+  /*
+  const ChangeEvent = (InputEvent,prevVal) => (e) => {
+    // console.log({ [InputEvent]: e.target.value });
+    setFormData((prevVal) => {
+      [InputEvent,prevVal]: e.target.value
+      
+    })
+  }
+  */
+
   const ChangeEvent = (InputEvent) => (e) => {
-    console.log({ [InputEvent]: e.target.value });
-    setFormData({ [InputEvent]: e.target.value });
+    setFormData((prevState) => ({
+      ...prevState,
+      [InputEvent]: e.target.value,
+    }));
   };
 
   return (
