@@ -20,13 +20,16 @@ export default function App() {
   // Next Logic
   const nextStep = () => {
     setStep(step + 1);
-    // if step 3 whole data submit and Alert
+    if (step === 3) {
+      // This All alert Data Will Be Send In Data Base , Base On Steps
+      alert('This All Data Send In DataBase');
+      alert('First Name : ' + FormData.Fnm + '  Last Name : ' + FormData.Lnm);
+    }
   };
 
   // Previous Logic
   const pervStep = () => {
     setStep(step - 1);
-    //
   };
 
   const ChangeEvent = (InputEventHook) => (e) => {
