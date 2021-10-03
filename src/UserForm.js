@@ -3,9 +3,7 @@ import React, { useState } from 'react';
 
 export default function App({ nextHook, InputEvent, Value }) {
   const { Fnm, Lnm, Email } = Value.FormData;
-  // console.log(Fnm, 'f');
-  // console.log(Lnm, 'l');
-  // console.log(Value.FormData, 'input');
+
   const next = () => {
     nextHook();
   };
@@ -23,7 +21,6 @@ export default function App({ nextHook, InputEvent, Value }) {
                 <input
                   type="text"
                   // onChange={(e) => setFnm(e.target.value)}
-                  // value={Fnm}
                   onChange={InputEvent('Fnm')}
                   value={Fnm}
                   name="fname"

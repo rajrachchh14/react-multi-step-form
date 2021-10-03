@@ -8,7 +8,6 @@ export default function App() {
   // Default Step  1
   const [step, setStep] = useState(1);
   // User Datas
-  // const [Fnm, setFnm] = useState('');
   const [FormData, setFormData] = useState({
     Fnm: '',
     Lnm: '',
@@ -26,26 +25,6 @@ export default function App() {
     setStep(step - 1);
   };
 
-  /*
-  const ChangeEvent = (e) => {
-    setFnm(e.target.value);
-    console.log('j');
-
-    // setFormData({ Fnm: e.target.value });
-    //  setFormData({ [InputEvent]: e.target.value });
-  };
-*/
-
-  /*
-  const ChangeEvent = (InputEvent,prevVal) => (e) => {
-    // console.log({ [InputEvent]: e.target.value });
-    setFormData((prevVal) => {
-      [InputEvent,prevVal]: e.target.value
-      
-    })
-  }
-  */
-
   const ChangeEvent = (InputEvent) => (e) => {
     setFormData((prevState) => ({
       ...prevState,
@@ -55,13 +34,11 @@ export default function App() {
 
   return (
     <>
-      {/* {console.log(step)} */}
       <h1 className="text-center">Multi Step Form</h1>
       {(() => {
         switch (step) {
           case 1:
             return (
-              // <UserForm nextHook={nextStep} Input={ChangeEvent} Value={Fnm} />
               <UserForm
                 nextHook={nextStep}
                 InputEvent={ChangeEvent}
@@ -79,10 +56,6 @@ export default function App() {
             return <h1>No project match</h1>;
         }
       })()}
-      {/* <UserForm />
-      <DetailForm />
-      <Confirm />
-      <Success /> */}
     </>
   );
 }
