@@ -11,6 +11,7 @@ export default function App() {
       <UserForm />
       <DetailForm />
       <Confirm />
+      <Success />
     </>
   );
 }

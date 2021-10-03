@@ -10,7 +10,7 @@ export default function DetailForm() {
             <form id="msform">
               <fieldset>
                 <h2 className="fs-title">More Detail</h2>
-                <h3 className="fs-subtitle">.........</h3>
+                <h3 className="fs-subtitle">Step - 2</h3>
                 <input type="text" name="twitter" placeholder="Twitter" />
                 <input type="text" name="facebook" placeholder="Facebook" />
                 <input type="text" name="gplus" placeholder="Google Plus" />

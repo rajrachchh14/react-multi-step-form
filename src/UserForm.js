@@ -11,7 +11,7 @@ export default function App() {
             <form id="msform">
               <fieldset>
                 <h2 className="fs-title">Personal Details</h2>
-                <h3 className="fs-subtitle">........</h3>
+                <h3 className="fs-subtitle">Step - 1</h3>
                 <input type="text" name="fname" placeholder="First Name" />
                 <input type="text" name="lname" placeholder="Last Name" />
                 <input type="text" name="email" placeholder="Email Address" />
