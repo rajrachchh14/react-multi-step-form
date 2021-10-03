@@ -5,7 +5,7 @@ export default function App({ nextHook, Input, Value }) {
   const [Email, setEmail] = useState('');
 
   const { Fnm, Lnm } = Value.FormData;
-  // console.log(fnm);
+  console.log(Fnm, 's');
   console.log(Value.FormData, 'input');
   const next = () => {
     nextHook();

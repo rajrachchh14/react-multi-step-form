@@ -33,8 +33,10 @@ export default function App() {
 */
 
   const ChangeEvent = (e) => {
-    setFormData({ Fnm: e.target.value });
-    console.log({ Fnm: e.target.value }, 'con');
+    setFormData({ Fnm: e.target.value, Lnm: e.target.value });
+
+    // setFormData({ Fnm: e.target.value });
+    // console.log({ Fnm: e.target.value }, 'con');
   };
 
   return (
