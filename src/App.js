@@ -26,6 +26,7 @@ export default function App() {
   // Previous Logic
   const pervStep = () => {
     setStep(step - 1);
+    //
   };
 
   const ChangeEvent = (InputEventHook) => (e) => {
