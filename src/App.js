@@ -11,9 +11,8 @@ export default function App() {
   const [Fnm, setFnm] = useState('');
 
   // Next Logic
-  const nextStep = (e) => {
+  const nextStep = () => {
     setStep(step + 1);
-
     // if step 3 whole data submit and Alert
   };
 
