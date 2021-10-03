@@ -1,10 +1,14 @@
 // step 2
 import React, { useState } from 'react';
 
-export default function DetailForm({ nextHook, prevHook }) {
-  const [Twitter, setTwitter] = useState('');
-  const [Facebook, setFacebook] = useState('');
-  const [Instagram, setInstagram] = useState('');
+export default function DetailForm({
+  nextHook,
+  prevHook,
+  InputEventHook,
+  Value,
+}) {
+  const { Twitter, Facebook, Instagram } = Value.FormData;
+
   const next = () => {
     nextHook();
   };
@@ -24,23 +28,23 @@ export default function DetailForm({ nextHook, prevHook }) {
                 <input
                   type="text"
                   value={Twitter}
-                  onChange={(e) => setTwitter(e.target.value)}
+                  onChange={InputEventHook('Twitter')}
                   name="Twitter"
                   placeholder="Twitter"
                 />
                 <input
                   type="text"
-                  value={Facebook}
-                  onChange={(e) => setFacebook(e.target.value)}
+                  value={Instagram}
+                  onChange={InputEventHook('Instagram')}
                   name="Instagram"
                   placeholder="Instagram"
                 />
                 <input
                   type="text"
-                  value={Instagram}
-                  onChange={(e) => setInstagram(e.target.value)}
-                  name="Instagram"
-                  placeholder="Instagram"
+                  value={Facebook}
+                  onChange={InputEventHook('Facebook')}
+                  name="Facebook"
+                  placeholder="Facebook"
                 />
                 <button
                   type="button"

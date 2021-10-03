@@ -1,7 +1,7 @@
 // step 1
 import React, { useState } from 'react';
 
-export default function App({ nextHook, InputEvent, Value }) {
+export default function App({ nextHook, InputEventHook, Value }) {
   const { Fnm, Lnm, Email } = Value.FormData;
 
   const next = () => {
@@ -21,21 +21,21 @@ export default function App({ nextHook, InputEvent, Value }) {
                 <input
                   type="text"
                   // onChange={(e) => setFnm(e.target.value)}
-                  onChange={InputEvent('Fnm')}
+                  onChange={InputEventHook('Fnm')}
                   value={Fnm}
                   name="fname"
                   placeholder="First Name"
                 />
                 <input
                   type="text"
-                  onChange={InputEvent('Lnm')}
+                  onChange={InputEventHook('Lnm')}
                   value={Lnm}
                   name="lname"
                   placeholder="Last Name"
                 />
                 <input
                   type="text"
-                  onChange={InputEvent('Email')}
+                  onChange={InputEventHook('Email')}
                   value={Email}
                   name="email"
                   placeholder="Email Address"

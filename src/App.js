@@ -12,6 +12,9 @@ export default function App() {
     Fnm: '',
     Lnm: '',
     Email: '',
+    Twitter: '',
+    Facebook: '',
+    Instagram: '',
   });
 
   // Next Logic
@@ -25,10 +28,10 @@ export default function App() {
     setStep(step - 1);
   };
 
-  const ChangeEvent = (InputEvent) => (e) => {
+  const ChangeEvent = (InputEventHook) => (e) => {
     setFormData((prevState) => ({
       ...prevState,
-      [InputEvent]: e.target.value,
+      [InputEventHook]: e.target.value,
     }));
   };
 
@@ -41,12 +44,19 @@ export default function App() {
             return (
               <UserForm
                 nextHook={nextStep}
-                InputEvent={ChangeEvent}
+                InputEventHook={ChangeEvent}
                 Value={{ FormData }}
               />
             );
           case 2:
-            return <DetailForm nextHook={nextStep} prevHook={pervStep} />;
+            return (
+              <DetailForm
+                nextHook={nextStep}
+                prevHook={pervStep}
+                InputEventHook={ChangeEvent}
+                Value={{ FormData }}
+              />
+            );
           case 3:
             return <Confirm nextHook={nextStep} prevHook={pervStep} />;
           case 4:
