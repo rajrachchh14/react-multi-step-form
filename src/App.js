@@ -8,7 +8,11 @@ export default function App() {
   // Default Step  1
   const [step, setStep] = useState(1);
   // User Datas
-  const [Fnm, setFnm] = useState('');
+  // const [Fnm, setFnm] = useState('');
+  const [FormData, setFormData] = useState({
+    Fnm: '',
+    Lnm: '',
+  });
 
   // Next Logic
   const nextStep = () => {
@@ -21,9 +25,16 @@ export default function App() {
     setStep(step - 1);
   };
 
+  /*
   const ChangeEvent = (e) => {
     setFnm(e.target.value);
     console.log('j');
+  };
+*/
+
+  const ChangeEvent = (e) => {
+    setFormData({ Fnm: e.target.value });
+    console.log({ Fnm: e.target.value }, 'con');
   };
 
   return (
@@ -34,7 +45,12 @@ export default function App() {
         switch (step) {
           case 1:
             return (
-              <UserForm nextHook={nextStep} Input={ChangeEvent} Value={Fnm} />
+              // <UserForm nextHook={nextStep} Input={ChangeEvent} Value={Fnm} />
+              <UserForm
+                nextHook={nextStep}
+                Input={ChangeEvent}
+                Value={{ FormData }}
+              />
             );
           case 2:
             return <DetailForm nextHook={nextStep} prevHook={pervStep} />;
