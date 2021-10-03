@@ -12,6 +12,7 @@ export default function App() {
   const [FormData, setFormData] = useState({
     Fnm: '',
     Lnm: '',
+    Email: '',
   });
 
   // Next Logic
@@ -29,14 +30,14 @@ export default function App() {
   const ChangeEvent = (e) => {
     setFnm(e.target.value);
     console.log('j');
+
+    // setFormData({ Fnm: e.target.value });
   };
 */
 
-  const ChangeEvent = (e) => {
-    setFormData({ Fnm: e.target.value, Lnm: e.target.value });
-
-    // setFormData({ Fnm: e.target.value });
-    // console.log({ Fnm: e.target.value }, 'con');
+  const ChangeEvent = (InputEvent) => (e) => {
+    console.log({ [InputEvent]: e.target.value });
+    setFormData({ [InputEvent]: e.target.value });
   };
 
   return (
@@ -50,7 +51,7 @@ export default function App() {
               // <UserForm nextHook={nextStep} Input={ChangeEvent} Value={Fnm} />
               <UserForm
                 nextHook={nextStep}
-                Input={ChangeEvent}
+                InputEvent={ChangeEvent}
                 Value={{ FormData }}
               />
             );

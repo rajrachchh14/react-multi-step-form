@@ -1,12 +1,11 @@
 // step 1
 import React, { useState } from 'react';
 
-export default function App({ nextHook, Input, Value }) {
-  const [Email, setEmail] = useState('');
-
-  const { Fnm, Lnm } = Value.FormData;
-  console.log(Fnm, 's');
-  console.log(Value.FormData, 'input');
+export default function App({ nextHook, InputEvent, Value }) {
+  const { Fnm, Lnm, Email } = Value.FormData;
+  // console.log(Fnm, 'f');
+  // console.log(Lnm, 'l');
+  // console.log(Value.FormData, 'input');
   const next = () => {
     nextHook();
   };
@@ -25,21 +24,21 @@ export default function App({ nextHook, Input, Value }) {
                   type="text"
                   // onChange={(e) => setFnm(e.target.value)}
                   // value={Fnm}
-                  onChange={Input}
+                  onChange={InputEvent('Fnm')}
                   value={Fnm}
                   name="fname"
                   placeholder="First Name"
                 />
                 <input
                   type="text"
-                  onChange={Input}
+                  onChange={InputEvent('Lnm')}
                   value={Lnm}
                   name="lname"
                   placeholder="Last Name"
                 />
                 <input
                   type="text"
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={InputEvent('Email')}
                   value={Email}
                   name="email"
                   placeholder="Email Address"
